@@ -43,7 +43,7 @@ interface EmailLayoutProps {
 //   border         -> slightly lighter than --border for a softer feel
 //   foreground     -> --foreground (oklch(0.145 0 0))
 //   muted          -> --muted-foreground (oklch(0.556 0 0))
-//   brand          -> --brand (oklch(0.67 0.131 237.65))
+//   brand          -> --brand, light mode (oklch(0.52 0.114 237.65))
 //   radius         -> --radius (0.625rem)
 export const emailColors = {
   pageBackground: "#eff6fb",
@@ -51,7 +51,7 @@ export const emailColors = {
   border: "#efefef",
   foreground: "#0a0a0a",
   muted: "#737373",
-  brand: "#30a0dc",
+  brand: "#0271a2",
 } as const;
 
 export const emailRadius = {

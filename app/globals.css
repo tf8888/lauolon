@@ -47,7 +47,12 @@ body {
 
 :root {
   color-scheme: light;
-  --brand: oklch(0.67 0.131 237.65);
+  /* Darker than the dark-mode brand on purpose: this value has to clear 4.5:1
+     against white as `text-brand`, under near-white text as `bg-brand`, and
+     against its own `bg-brand/10` tint in badges — the last of those is the
+     binding constraint. 0.52 is the lightest value that satisfies all three.
+     Chroma is capped at 0.114 because 0.131 falls outside sRGB here. */
+  --brand: oklch(0.52 0.114 237.65);
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -88,6 +93,8 @@ body {
 
 .dark {
   color-scheme: dark;
+  /* Lighter than the light-mode brand: here it must clear 4.5:1 against the
+     dark card, and carry dark foreground text when used as a background. */
   --brand: oklch(0.67 0.131 237.65);
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
