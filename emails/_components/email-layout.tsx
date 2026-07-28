@@ -38,20 +38,20 @@ interface EmailLayoutProps {
 // below so the email palette stays in sync with the app.
 //
 // Matching tokens:
-//   pageBackground -> --secondary (oklch(0.97 0.01 38.76))
+//   pageBackground -> --secondary (oklch(0.97 0.01 237.65))
 //   cardBackground -> --background / --card (oklch(1 0 0))
 //   border         -> slightly lighter than --border for a softer feel
 //   foreground     -> --foreground (oklch(0.145 0 0))
 //   muted          -> --muted-foreground (oklch(0.556 0 0))
-//   brand          -> --brand (oklch(0.67 0.131 38.76))
+//   brand          -> --brand (oklch(0.67 0.131 237.65))
 //   radius         -> --radius (0.625rem)
 export const emailColors = {
-  pageBackground: "#fcf3f0",
+  pageBackground: "#eff6fb",
   cardBackground: "#ffffff",
   border: "#efefef",
   foreground: "#0a0a0a",
   muted: "#737373",
-  brand: "#d87656",
+  brand: "#30a0dc",
 } as const;
 
 export const emailRadius = {
