@@ -91,13 +91,20 @@ function calculateRollingProjectedIncomeTotal(params: {
   return monthlySeries.reduce((runningTotal, monthBucket) => {
     // Projected income currently comes in month buckets. To build a rolling
     // window estimate, prorate each bucket by the number of overlapping days.
+    // Read the bucket with UTC getters: the series carries UTC-constructed
+    // month starts, and local getters would shift the bucket a month back in
+    // negative-offset timezones.
     const monthStart = new Date(
-      Date.UTC(monthBucket.date.getFullYear(), monthBucket.date.getMonth(), 1),
+      Date.UTC(
+        monthBucket.date.getUTCFullYear(),
+        monthBucket.date.getUTCMonth(),
+        1,
+      ),
     );
     const monthEndExclusive = new Date(
       Date.UTC(
-        monthBucket.date.getFullYear(),
-        monthBucket.date.getMonth() + 1,
+        monthBucket.date.getUTCFullYear(),
+        monthBucket.date.getUTCMonth() + 1,
         1,
       ),
     );
