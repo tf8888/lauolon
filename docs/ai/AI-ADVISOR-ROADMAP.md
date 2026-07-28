@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Turn Foliofox AI Advisor into a faster, more conversational, portfolio-native decision partner by prioritizing:
+Turn Lauolon AI Advisor into a faster, more conversational, portfolio-native decision partner by prioritizing:
 
 1. Brevity and flow
 2. Instrument resolution (ISIN/ticker/symbol)
@@ -204,7 +204,7 @@ Objective: let users update portfolio data directly from chat with explicit appr
 ### Why This Phase
 
 - Users naturally ask operational requests like: "today I bought 20 shares of AAPL, can you update my records?"
-- Current advisor is mostly read/analyze oriented; this phase closes the loop from advice to execution inside Foliofox.
+- Current advisor is mostly read/analyze oriented; this phase closes the loop from advice to execution inside Lauolon.
 - UI already includes tool states for approval/denial, so we can build on an aligned interaction model.
 
 ### Workstream A: Write Tool Surface — DONE

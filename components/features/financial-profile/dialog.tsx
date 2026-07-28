@@ -25,7 +25,7 @@ export function FinancialProfileDialog({
         <DialogHeader>
           <DialogTitle>Financial profile</DialogTitle>
           <DialogDescription>
-            Update this form to help Foliofox AI Advisor understand your
+            Update this form to help Lauolon AI Advisor understand your
             financial situation and respond with more relevant guidance.
           </DialogDescription>
         </DialogHeader>

@@ -9,7 +9,7 @@ import type { PositionCategoryListItem } from "@/server/position-categories/type
 interface UsePositionCategoriesOptions {
   positionType?: "asset" | "liability";
   // Keep system-only as the default. Custom categories are user-facing labels,
-  // while import and AI flows still validate against Foliofox system categories.
+  // while import and AI flows still validate against Lauolon system categories.
   includeCustomCategories?: boolean;
 }
 

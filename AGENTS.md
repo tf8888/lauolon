@@ -2,7 +2,7 @@
 
 ## Project Context
 
-- Foliofox is a Next.js App Router application for portfolio intelligence and net worth tracking
+- Lauolon is a Next.js App Router application for portfolio intelligence and net worth tracking
 - Stack: TypeScript, Supabase, Shadcn UI, Tailwind CSS
 - Deployment: Vercel
 - Data Strategy: Daily cron refreshes for market data/FX and manual updates (no WebSocket)

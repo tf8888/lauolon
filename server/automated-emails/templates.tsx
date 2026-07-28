@@ -47,7 +47,7 @@ async function resolveAutomatedEmailLinks(params: {
     unsubscribeUrl: `${siteUrl}/unsubscribe?token=${encodeURIComponent(
       unsubscribeToken,
     )}`,
-    logoUrl: `${siteUrl}/images/foliofox-logo.png`,
+    logoUrl: `${siteUrl}/images/lauolon-logo.png`,
   };
 }
 
@@ -91,7 +91,7 @@ export async function buildWeeklyRecapEmailTemplate(
   const renderedTemplate = await renderTemplateEmail(template);
 
   return {
-    subject: "Your Foliofox weekly recap",
+    subject: "Your Lauolon weekly recap",
     links,
     ...renderedTemplate,
   };
@@ -123,7 +123,7 @@ export async function buildReengagementEmailTemplate(
   const renderedTemplate = await renderTemplateEmail(template);
 
   return {
-    subject: "A quick portfolio check-in from Foliofox",
+    subject: "A quick portfolio check-in from Lauolon",
     links,
     ...renderedTemplate,
   };

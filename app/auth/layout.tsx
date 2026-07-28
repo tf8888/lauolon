@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { FoliofoxLogo } from "@/components/ui/logos/foliofox-logo";
+import { LauolonLogo } from "@/components/ui/logos/lauolon-logo";
 
 export default function AuthLayout({
   children,
@@ -11,7 +11,7 @@ export default function AuthLayout({
     <div className="bg-muted flex min-h-svh flex-col items-center justify-center p-4">
       <div className="flex w-full max-w-sm flex-col gap-6">
         <Link href="/" className="self-center">
-          <FoliofoxLogo />
+          <LauolonLogo />
         </Link>
         {children}
       </div>

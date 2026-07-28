@@ -1,0 +1,16 @@
+# Keep line endings LF in the repo and in the working tree on every platform.
+# Prettier is configured with its default `endOfLine: "lf"`, so a CRLF checkout
+# on Windows makes `npm run format:check` fail on every file and makes the
+# lint-staged pre-commit hook rewrite files it should leave alone.
+* text=auto eol=lf
+
+# Binary assets must never be line-ending converted.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.svg text eol=lf
+*.ico binary
+*.pdf binary
+*.tgz binary
+*.xlsx binary

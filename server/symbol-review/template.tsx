@@ -30,7 +30,7 @@ export async function buildSymbolReviewDigestEmail(
   const template = (
     <SymbolReviewDigestEmail
       entries={entries}
-      logoUrl={`${siteUrl}/images/foliofox-logo.png`}
+      logoUrl={`${siteUrl}/images/lauolon-logo.png`}
     />
   );
 

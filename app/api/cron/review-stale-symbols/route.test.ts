@@ -52,7 +52,7 @@ describe("GET /api/cron/review-stale-symbols", () => {
     const body = await response.json();
     expect(body.success).toBe(true);
     expect(body.stats.reviewed).toBe(2);
-    expect(maxDuration).toBe(800);
+    expect(maxDuration).toBe(300);
     expect(runSymbolReviewMock).toHaveBeenCalledTimes(1);
   });
 

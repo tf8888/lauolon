@@ -6,7 +6,7 @@
 - Compared windows:
 - `pre`: `N/A` (pre-telemetry baseline from static export)
 - `post`: `N/A` (pre-telemetry baseline from static export)
-- Source dataset: `/Users/leonardo/Desktop/Supabase Snippet Recent 300 Conversation Messages.csv`
+- Source dataset: `~/Supabase Snippet Recent 300 Conversation Messages.csv`
 
 ## KPI Output
 

@@ -3,9 +3,11 @@ import { headers } from "next/headers";
 
 import { runSymbolReview } from "@/server/symbol-review/worker";
 
-// Ten sequential web-search research calls, bounded per call and per loop by
-// the worker itself. Matches fetch-quotes, the other long-running cron.
-export const maxDuration = 800;
+// A few sequential web-search research calls, bounded per call and per loop by
+// the worker itself. Matches fetch-quotes, the other long-running cron, and the
+// 300s ceiling of Vercel's Hobby plan. `MAX_SYMBOLS_PER_RUN` in the worker is
+// sized against this budget — change both together.
+export const maxDuration = 300;
 
 export async function GET() {
   // Wait for the incoming request so this route is never prerendered.

@@ -107,7 +107,7 @@ export function StaleBadge({ positionId, label }: StaleBadgeProps) {
             </DialogTitle>
             <DialogDescription>
               {isUnavailable
-                ? "Foliofox no longer has an active Yahoo Finance ticker for this position."
+                ? "Lauolon no longer has an active Yahoo Finance ticker for this position."
                 : "We haven't received fresh market data for this position in over 7 days."}
             </DialogDescription>
           </DialogHeader>
@@ -115,7 +115,7 @@ export function StaleBadge({ positionId, label }: StaleBadgeProps) {
             {isUnavailable ? (
               <div className="space-y-4 text-sm">
                 <p className="text-muted-foreground">
-                  Foliofox will keep using the last available value and preserve
+                  Lauolon will keep using the last available value and preserve
                   the position&apos;s history.
                 </p>
                 <Alert>

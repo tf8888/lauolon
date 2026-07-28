@@ -1,5 +1,5 @@
 <!--
-  Foliofox Product Reference — served to the AI advisor via the getProductReference tool.
+  Lauolon Product Reference — served to the AI advisor via the getProductReference tool.
 
   MAINTENANCE: update this file in the same PR as any change to user-facing behavior.
   Source files this document distills:
@@ -22,13 +22,13 @@
   - VISION.md, README.md, AGENTS.md
 -->
 
-# Foliofox Product Reference
+# Lauolon Product Reference
 
-## What Foliofox is
+## What Lauolon is
 
-Foliofox is a portfolio tracker and net worth tool with an AI advisor. It is built for financially literate users (FIRE, Bogleheads, self-managed investors) who want a clean tracker plus an AI thinking partner with full context on their portfolio history. The tracker is free and open source.
+Lauolon is a portfolio tracker and net worth tool with an AI advisor. It is built for financially literate users (FIRE, Bogleheads, self-managed investors) who want a clean tracker plus an AI thinking partner with full context on their portfolio history. The tracker is free and open source.
 
-Foliofox is **not** a budgeting app or expense tracker. It does not track daily spending, and it is not aimed at day traders.
+Lauolon is **not** a budgeting app or expense tracker. It does not track daily spending, and it is not aimed at day traders.
 
 Market prices and FX rates refresh once daily (plus manual updates). There are no real-time streaming prices.
 
@@ -65,12 +65,12 @@ Three ways to add an asset:
 
 **Position value** = quantity × unit value. **Profit/loss** = (unit value − cost basis per unit) × quantity, computed from the latest relevant snapshot.
 
-Symbol-linked additions, imports, and ticker updates resolve only active Yahoo Finance listings. A retired or delisted ticker is never silently attached to its historical security: Foliofox attempts to create the current Yahoo listing and, if Yahoo no longer provides it, returns an error so the ticker can be corrected or the asset entered manually.
+Symbol-linked additions, imports, and ticker updates resolve only active Yahoo Finance listings. A retired or delisted ticker is never silently attached to its historical security: Lauolon attempts to create the current Yahoo listing and, if Yahoo no longer provides it, returns an error so the ticker can be corrected or the asset entered manually.
 
 ### Market data status
 
-- **Stale** means Foliofox has not received fresh market data for more than seven days. The last available value remains in use while daily refreshes continue.
-- **Market data unavailable** means Foliofox no longer has an active Yahoo Finance ticker for the linked symbol. Historical data and the last available value remain intact. Update the ticker if the security moved or was renamed; archive the position if it is no longer held.
+- **Stale** means Lauolon has not received fresh market data for more than seven days. The last available value remains in use while daily refreshes continue.
+- **Market data unavailable** means Lauolon no longer has an active Yahoo Finance ticker for the linked symbol. Historical data and the last available value remain intact. Update the ticker if the security moved or was renamed; archive the position if it is no longer held.
 
 ## Portfolio records (buy / sell / update)
 
@@ -157,7 +157,7 @@ Emergency Fund,update,2024-06-30,5000.0,1.00,Interest accrual
 
 ## Broker file import
 
-Foliofox can also import a broker's own transaction export directly — the format is detected automatically from the file's columns, and positions plus buy/sell records are created from it. Supported brokers:
+Lauolon can also import a broker's own transaction export directly — the format is detected automatically from the file's columns, and positions plus buy/sell records are created from it. Supported brokers:
 
 - **Trade Republic** — transaction export with `date, type, name, symbol, shares, price, currency, …` columns.
 - **Scalable Capital** — the genuine export with `date, time, status, reference, description, assetType, type, isin, shares, price, amount, fee, tax, currency`. "Savings plan" executions are imported as buys.

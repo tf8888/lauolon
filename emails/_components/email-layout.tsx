@@ -31,7 +31,7 @@ interface EmailLayoutProps {
   unsubscribeUrl?: string;
 }
 
-// NOTE: These values mirror the Foliofox design tokens in app/globals.css.
+// NOTE: These values mirror the Lauolon design tokens in app/globals.css.
 // Email clients can't reliably resolve CSS custom properties (var(--...)),
 // so we hard-code the literal equivalents here. When any token in the
 // :root { ... } block in globals.css changes, update the matching entry
@@ -111,7 +111,7 @@ export function EmailMutedText({
 }
 
 // Hairline horizontal rule used to separate content sections inside the card.
-// Mirrors the editorial spacing rhythm of the Foliofox marketing emails.
+// Mirrors the editorial spacing rhythm of the Lauolon marketing emails.
 export function EmailSectionDivider() {
   return (
     <Hr
@@ -122,6 +122,12 @@ export function EmailSectionDivider() {
     />
   );
 }
+
+// Bulk-mail law (CAN-SPAM, and the equivalent elsewhere) requires a real
+// postal address in user-facing mail. It is deployment-specific rather than
+// something the repo can hardcode, so the footer line is omitted entirely when
+// EMAILS_POSTAL_ADDRESS is unset — printing a wrong address is worse than none.
+const postalAddress = process.env.EMAILS_POSTAL_ADDRESS?.trim();
 
 export function EmailLayout({
   previewText,
@@ -169,7 +175,7 @@ export function EmailLayout({
               src={logoUrl}
               width={LOGO_DISPLAY_WIDTH}
               height={LOGO_DISPLAY_HEIGHT}
-              alt="Foliofox Logo"
+              alt="Lauolon Logo"
             />
 
             {/* Title */}
@@ -234,15 +240,16 @@ export function EmailLayout({
                 >
                   {reasonText}
                 </EmailMutedText>
-                <EmailMutedText
-                  style={{
-                    fontSize: "12px",
-                    margin: 0,
-                  }}
-                >
-                  Foliofox, Room 402-J14, 10, Pangyo-ro 71-beon-gil, Bundang-gu,
-                  Seongnam-si, Gyeonggi-do, Republic of Korea
-                </EmailMutedText>
+                {postalAddress ? (
+                  <EmailMutedText
+                    style={{
+                      fontSize: "12px",
+                      margin: 0,
+                    }}
+                  >
+                    {postalAddress}
+                  </EmailMutedText>
+                ) : null}
               </>
             ) : null}
             {settingsUrl && unsubscribeUrl ? (

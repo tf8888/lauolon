@@ -1,17 +1,17 @@
 import Link from "next/link";
 
-import { FoliofoxLogo } from "@/components/ui/logos/foliofox-logo";
-import { FoliofoxIcon } from "@/components/ui/logos/foliofox-icon";
+import { LauolonLogo } from "@/components/ui/logos/lauolon-logo";
+import { LauolonIcon } from "@/components/ui/logos/lauolon-icon";
 
 export function Branding() {
   return (
     <div className="flex flex-col items-center gap-2">
-      <Link href="/" aria-label="Foliofox - Go to homepage">
-        <FoliofoxLogo
+      <Link href="/" aria-label="Lauolon - Go to homepage">
+        <LauolonLogo
           height={24}
           className="group-data-[state=collapsed]:hidden"
         />
-        <FoliofoxIcon
+        <LauolonIcon
           height={24}
           className="hidden group-data-[state=collapsed]:block"
         />

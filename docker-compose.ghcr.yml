@@ -1,7 +1,7 @@
 services:
   app:
-    image: ghcr.io/unav4ila8le/foliofox:main
-    container_name: foliofox
+    image: ghcr.io/tf8888/lauolon:main
+    container_name: lauolon
     ports:
       - "3000:3000"
     env_file:

@@ -2,7 +2,7 @@ services:
   app:
     build:
       context: .
-    container_name: foliofox
+    container_name: lauolon
     ports:
       - "3000:3000"
     env_file:

@@ -14,12 +14,12 @@ export const AUTOMATED_EMAIL_PREFERENCE_DETAILS = {
   weekly_recap_enabled: {
     label: "Weekly recap",
     reasonText:
-      "You received this email because weekly recap emails are enabled in your Foliofox settings.",
+      "You received this email because weekly recap emails are enabled in your Lauolon settings.",
   },
   marketing_emails_enabled: {
     label: "Marketing emails",
     reasonText:
-      "You received this email because marketing emails are enabled in your Foliofox settings.",
+      "You received this email because marketing emails are enabled in your Lauolon settings.",
   },
 } as const satisfies Record<
   AutomatedEmailPreferenceKey,

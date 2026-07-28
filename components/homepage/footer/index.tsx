@@ -1,6 +1,5 @@
 import Link from "next/link";
-
-import { DiscordIcon } from "@/components/ui/logos/discord-icon";
+import { Mail } from "lucide-react";
 
 import { PUBLIC_LEGAL_LINKS } from "@/lib/legal/registry";
 
@@ -13,14 +12,12 @@ export async function Footer() {
     <footer className="text-muted-foreground container mx-auto mt-8 grid max-w-7xl grid-cols-3 gap-4 p-3 py-6 text-sm font-medium">
       <div className="col-span-full sm:col-span-1">
         <a
-          href="/discord"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Join our Discord"
-          className="flex items-center gap-1.5 justify-self-start transition-colors hover:text-[#5865F2]"
+          href="mailto:support@lauolon.com"
+          aria-label="Contact support"
+          className="hover:text-foreground flex items-center gap-1.5 justify-self-start transition-colors"
         >
-          <DiscordIcon width={20} />
-          <p>Join our Discord</p>
+          <Mail size={18} />
+          <p>Contact support</p>
         </a>
       </div>
       <div className="col-span-full sm:col-span-1">

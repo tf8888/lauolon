@@ -6,7 +6,7 @@ import { getRequestLocale } from "@/lib/locale/resolve-locale";
 
 export const metadata: Metadata = {
   title: "Changelog",
-  description: "Latest updates and improvements to Foliofox.",
+  description: "Latest updates and improvements to Lauolon.",
 };
 
 export default async function ChangelogPage() {

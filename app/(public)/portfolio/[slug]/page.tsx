@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
-import { FoliofoxIcon } from "@/components/ui/logos/foliofox-icon";
+import { LauolonIcon } from "@/components/ui/logos/lauolon-icon";
 import { Skeleton } from "@/components/ui/skeleton";
 import { PublicPortfolioHeader } from "@/components/public-portfolio/header";
 import { PublicPortfolioAssetsTable } from "@/components/public-portfolio/assets-table";
@@ -40,7 +40,7 @@ export async function generateMetadata({
   if (!resolved || !resolved.isActive) {
     return {
       title: "Public Portfolio",
-      description: "View this public portfolio on Foliofox.",
+      description: "View this public portfolio on Lauolon.",
     };
   }
 
@@ -49,7 +49,7 @@ export async function generateMetadata({
 
   return {
     title: `${username}'s Portfolio`,
-    description: `View ${username}'s public portfolio on Foliofox. Track positions, asset allocation, and performance insights.`,
+    description: `View ${username}'s public portfolio on Lauolon. Track positions, asset allocation, and performance insights.`,
   };
 }
 
@@ -178,10 +178,10 @@ export default async function PublicPortfolioPage(props: {
   if (!resolved.isActive) {
     return (
       <div className="flex flex-col items-center justify-center p-8 text-center">
-        <Link href="/" aria-label="Foliofox - Go to homepage">
-          <FoliofoxIcon
+        <Link href="/" aria-label="Lauolon - Go to homepage">
+          <LauolonIcon
             height={64}
-            className="text-muted-foreground/20 hover:text-brand transition-colors"
+            className="opacity-20 transition-opacity hover:opacity-100"
           />
         </Link>
         <h1 className="mt-4 text-2xl font-semibold">Link expired</h1>

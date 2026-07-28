@@ -47,7 +47,7 @@ export function ExportPortfolioRecordsDialog({
 
       downloadCsvFile({
         data: result.data,
-        filename: `foliofox-records-${todayDateKey}.csv`,
+        filename: `lauolon-records-${todayDateKey}.csv`,
       });
 
       toast.success("Records exported successfully!");
@@ -94,7 +94,7 @@ export function ExportPortfolioRecordsDialog({
               <span className="font-medium">File format:</span> CSV (Comma
               Separated Values)
               <br />
-              <span className="font-medium">Filename:</span> foliofox-records-
+              <span className="font-medium">Filename:</span> lauolon-records-
               {todayDateKey}.csv
             </div>
           </div>

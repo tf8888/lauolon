@@ -86,7 +86,7 @@ export const aiTools = {
   getPositions: routedTool({
     telemetryRoutes: ["general"],
     description:
-      "Get raw positions in original currencies (no FX conversion). Optionally filter by position IDs. Uses market prices as-of the given date (defaults to today) for market-backed positions (e.g., securities, domains, etc.). Category fields: category_id is the canonical Foliofox system category id; category is the user-facing category label; display_category_id is the user-facing grouping id.",
+      "Get raw positions in original currencies (no FX conversion). Optionally filter by position IDs. Uses market prices as-of the given date (defaults to today) for market-backed positions (e.g., securities, domains, etc.). Category fields: category_id is the canonical Lauolon system category id; category is the user-facing category label; display_category_id is the user-facing grouping id.",
     inputSchema: z.object({
       positionIds: z
         .array(z.string())
@@ -422,7 +422,7 @@ export const aiTools = {
   getProductReference: routedTool({
     telemetryRoutes: ["general"],
     description:
-      "Get the Foliofox product reference explaining how the app itself works: CSV import formats and columns, supported broker files (Trade Republic, Scalable Capital, Directa), adding assets, field meanings (quantity, unit value, cost basis per unit, capital gains tax rate), buy/sell/update records, categories, currencies, and sharing. Call this before answering any question about using Foliofox.",
+      "Get the Lauolon product reference explaining how the app itself works: CSV import formats and columns, supported broker files (Trade Republic, Scalable Capital, Directa), adding assets, field meanings (quantity, unit value, cost basis per unit, capital gains tax rate), buy/sell/update records, categories, currencies, and sharing. Call this before answering any question about using Lauolon.",
     inputSchema: z.object({}),
     execute: async () => getProductReference(),
   }),
@@ -430,7 +430,7 @@ export const aiTools = {
   getPositionCategories: routedTool({
     telemetryRoutes: ["general"],
     description:
-      "List valid position categories: Foliofox system categories plus the user's custom categories. Call this before createPosition to pick a real category id, unless the category is clearly 'other'. Returns: id, name, source (system|custom), category_id, user_category_id, position_type.",
+      "List valid position categories: Lauolon system categories plus the user's custom categories. Call this before createPosition to pick a real category id, unless the category is clearly 'other'. Returns: id, name, source (system|custom), category_id, user_category_id, position_type.",
     inputSchema: z.object({
       positionType: z
         .enum(["asset", "liability"])

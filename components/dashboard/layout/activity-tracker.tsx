@@ -6,7 +6,7 @@ import { LAST_APP_ACTIVITY_MIN_INTERVAL_MS } from "@/server/automated-emails/con
 import { touchLastAppActivity } from "@/server/profile/actions";
 
 function getActivityStorageKey(userId: string) {
-  return `foliofox:last-app-activity-sync:${userId}`;
+  return `lauolon:last-app-activity-sync:${userId}`;
 }
 
 function readLastSyncedTimestamp(userId: string): number | null {

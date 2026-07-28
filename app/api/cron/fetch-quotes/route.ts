@@ -12,7 +12,10 @@ import {
   stringifyError,
 } from "@/server/shared/retry";
 
-export const maxDuration = 800;
+// Vercel's Hobby plan caps function duration at 300s (Fluid compute); 800s is
+// Pro-only and fails the build outright. Must stay a literal for Next's
+// build-time analysis.
+export const maxDuration = 300;
 
 interface QuoteCronDateStats extends CronDateStats {
   exactDateMatches: number;

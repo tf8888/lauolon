@@ -1,8 +1,8 @@
-# Contributing to Foliofox
+# Contributing to Lauolon
 
 First off, thanks for taking the time to contribute!
 
-I'm Leonardo the founder of Foliofox. All types of contributions are encouraged and valued.
+All types of contributions are encouraged and valued.
 See the [Table of Contents](#table-of-contents) for different ways to help and details about how this project handles them. Please make sure to read the relevant section before making your contribution. The community looks forward to your contributions.
 
 > And if you like the project, but just don't have time to contribute, that's fine. There are other easy ways to support the project and show your appreciation:
@@ -12,7 +12,7 @@ See the [Table of Contents](#table-of-contents) for different ways to help and d
 > - Refer this project in your project's readme
 > - Mention it to friends/colleagues or at your local meetup
 
-If you need help, feel free to reach out to [@unav4ila8le](https://x.com/unav4ila8le).
+If you need help, feel free to reach out to [@tf8888](https://x.com/tf8888).
 
 ## Table of Contents
 
@@ -27,7 +27,7 @@ If you need help, feel free to reach out to [@unav4ila8le](https://x.com/unav4il
 
 ## Local Development
 
-You can build and run Foliofox locally using either Docker or a local Node.js setup.
+You can build and run Lauolon locally using either Docker or a local Node.js setup.
 
 ### Prerequisites
 
@@ -52,8 +52,8 @@ You can build and run Foliofox locally using either Docker or a local Node.js se
 #### 1) Clone the repository
 
 ```bash
-git clone https://github.com/unav4ila8le/foliofox.git
-cd foliofox
+git clone https://github.com/tf8888/lauolon.git
+cd lauolon
 ```
 
 #### 2) Docker: configure environment
@@ -101,8 +101,8 @@ For faster development, we suggest using the traditional local setup:
 #### 1) Clone and install npm dependencies
 
 ```bash
-git clone https://github.com/unav4ila8le/foliofox.git
-cd foliofox
+git clone https://github.com/tf8888/lauolon.git
+cd lauolon
 npm install
 ```
 
@@ -188,7 +188,7 @@ supabase gen types typescript --project-id <your-project-ref> > types/database.t
 
 - Import the repo into Vercel.
 - Set the same environment variables listed in [.env.example](./.env.example) (Project Settings → Environment Variables).
-- Scheduled jobs are configured in `vercel.json`. Their schedules, env-var gating, and manual-trigger command are documented in [docs/CRONS.md](./docs/CRONS.md).
+- Scheduled jobs run from GitHub Actions, not Vercel Cron (the Hobby plan caps you at two daily crons). Configure the `SITE_URL` variable and `CRON_SECRET` secret on the repository. Their schedules, env-var gating, and manual-trigger command are documented in [docs/CRONS.md](./docs/CRONS.md).
 
 ## Types
 
@@ -236,23 +236,23 @@ docs(contributing): document commit conventions and pr checklist
 
 ## Reporting Bugs
 
-First search existing [issues](https://github.com/unav4ila8le/foliofox/issues). If nothing matches, open a new [issue](https://github.com/unav4ila8le/foliofox/issues/new).
+First search existing [issues](https://github.com/tf8888/lauolon/issues). If nothing matches, open a new [issue](https://github.com/tf8888/lauolon/issues/new).
 
 - Ensure you’re on the latest version of `main`.
 - Provide clear expected vs actual behavior.
 - Include steps to reproduce (ideally a minimal example and screenshots/screen recodings if they apply). If there are no reproduction steps or no obvious way to reproduce the issue, I will ask you for those steps and mark the issue as `needs repro`. Bugs with the `needs-repro` tag will not be addressed until they are reproduced.
 - Add environment details (OS, Node, package manager).
-- **Security issues:** [report a vulnerability](https://github.com/unav4ila8le/foliofox/security) (do not post security issues publicly).
+- **Security issues:** [report a vulnerability](https://github.com/tf8888/lauolon/security) (do not post security issues publicly).
 
 ## Suggesting Enhancements
 
-- Search existing [issues](https://github.com/unav4ila8le/foliofox/issues).
+- Search existing [issues](https://github.com/tf8888/lauolon/issues).
 - Explain current vs desired behavior and why it helps most users.
 - Include alternatives considered and, if helpful, screenshots or references.
 
 ## Legal Notice
 
-By contributing to Foliofox, you agree that your contributions will be licensed under its MIT license.
+By contributing to Lauolon, you agree that your contributions will be licensed under its MIT license.
 
 <!-- TODO
  create an issue template for bugs and errors that can be used as a guide and that defines the structure of the information to be included. -->

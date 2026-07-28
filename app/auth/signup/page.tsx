@@ -8,7 +8,7 @@ import { createClient } from "@/supabase/server";
 
 export const metadata: Metadata = {
   title: "Signup",
-  description: "Create a new free account on Foliofox.",
+  description: "Create a new free account on Lauolon.",
 };
 
 export default async function SignupPage() {

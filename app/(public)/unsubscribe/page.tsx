@@ -69,7 +69,7 @@ export default async function UnsubscribePage(props: {
     return (
       <UnsubscribeCard
         title="This unsubscribe link is no longer valid"
-        description="The link may have expired or already been replaced. Open the latest email footer link, or sign in to Foliofox and update your preferences from settings."
+        description="The link may have expired or already been replaced. Open the latest email footer link, or sign in to Lauolon and update your preferences from settings."
         ctaLabel="Open dashboard settings"
         ctaHref="/dashboard?settings=emails"
       />
@@ -80,7 +80,7 @@ export default async function UnsubscribePage(props: {
     return (
       <UnsubscribeCard
         title={`${unsubscribeResult.preferenceLabel} already off`}
-        description="Nothing else changed. If you want to turn these emails back on later, sign in to Foliofox and update your settings."
+        description="Nothing else changed. If you want to turn these emails back on later, sign in to Lauolon and update your settings."
         ctaLabel="Open dashboard settings"
         ctaHref="/dashboard?settings=emails"
       />
@@ -90,7 +90,7 @@ export default async function UnsubscribePage(props: {
   return (
     <UnsubscribeCard
       title={`${unsubscribeResult.preferenceLabel} turned off`}
-      description="You will stop receiving this category of automated emails. You can turn it back on anytime from your Foliofox settings after signing in."
+      description="You will stop receiving this category of automated emails. You can turn it back on anytime from your Lauolon settings after signing in."
       ctaLabel="Open dashboard settings"
       ctaHref="/dashboard?settings=emails"
     />

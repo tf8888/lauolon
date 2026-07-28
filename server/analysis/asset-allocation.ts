@@ -74,7 +74,7 @@ export const calculateAssetAllocation = cache(
     // 5. Group by the user-facing category and sum target-currency values.
     // Custom categories intentionally use display_category_* here so allocation
     // charts treat them as first-class slices instead of merging them into
-    // Foliofox's hidden system "other" fallback.
+    // Lauolon's hidden system "other" fallback.
     const assetAllocationInTarget: {
       [key: string]: {
         category_id: string;

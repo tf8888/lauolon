@@ -1,6 +1,6 @@
 # Quote Fetch Behavior
 
-This document explains how Foliofox resolves quote prices for symbol-backed positions.
+This document explains how Lauolon resolves quote prices for symbol-backed positions.
 
 It focuses on behavior, not implementation details, so it should stay useful even as the code evolves.
 

@@ -99,7 +99,7 @@ export function ChatComposer({
             placeholder={
               hasPendingApproval
                 ? "Approve or deny the proposed action to continue"
-                : "Ask Foliofox..."
+                : "Ask Lauolon..."
             }
             ref={textareaRef}
           />

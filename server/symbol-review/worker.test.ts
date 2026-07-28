@@ -132,8 +132,8 @@ function groundedResult() {
 beforeEach(() => {
   vi.stubEnv("AI_PROVIDER_API_KEY", "test-key");
   vi.stubEnv("RESEND_API_KEY", "test-resend");
-  vi.stubEnv("EMAILS_FROM_ADDRESS", "Foliofox <notify@foliofox.dev>");
-  vi.stubEnv("NEXT_PUBLIC_SITE_URL", "https://test.foliofox.com");
+  vi.stubEnv("EMAILS_FROM_ADDRESS", "Lauolon <notify@lauolon.dev>");
+  vi.stubEnv("NEXT_PUBLIC_SITE_URL", "https://test.lauolon.com");
   sendEmailMock.mockResolvedValue({ provider: "resend", messageId: "1" });
 });
 
@@ -335,7 +335,7 @@ describe("runSymbolReview digest delivery", () => {
 
     expect(result.stats.digestsSent).toBe(1);
     expect(sendEmailMock).toHaveBeenCalledWith(
-      expect.objectContaining({ to: "notify@foliofox.dev" }),
+      expect.objectContaining({ to: "notify@lauolon.dev" }),
     );
     expect(calls.some((call) => call.operation === "update")).toBe(true);
   });

@@ -1,5 +1,5 @@
 -- ============================================================================
--- Foliofox Local Development Seed Data
+-- Lauolon Local Development Seed Data
 -- ============================================================================
 -- This script seeds a test user for local development only.
 -- It will NOT run against linked or production projects because seed.sql

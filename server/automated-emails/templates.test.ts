@@ -5,7 +5,7 @@ import { toCivilDateKeyOrThrow } from "@/lib/date/date-utils";
 
 import type { AutomatedEmailDigest } from "@/server/automated-emails/digest";
 
-const SITE_URL = "https://test.foliofox.com";
+const SITE_URL = "https://test.lauolon.com";
 
 function buildSampleDigest(
   overrides?: Partial<AutomatedEmailDigest>,
@@ -94,7 +94,7 @@ describe("automated email templates", () => {
       digest: buildSampleDigest(),
     });
 
-    expect(rendered.subject).toBe("Your Foliofox weekly recap");
+    expect(rendered.subject).toBe("Your Lauolon weekly recap");
 
     expect(rendered.links.dashboardUrl).toBe(`${SITE_URL}/dashboard`);
     expect(rendered.links.settingsUrl).toBe(
@@ -127,7 +127,7 @@ describe("automated email templates", () => {
       digest: buildSampleDigest(),
     });
 
-    expect(rendered.subject).toBe("A quick portfolio check-in from Foliofox");
+    expect(rendered.subject).toBe("A quick portfolio check-in from Lauolon");
 
     for (const output of [rendered.html, rendered.text]) {
       expect(output).toContain(rendered.links.dashboardUrl);

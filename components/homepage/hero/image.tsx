@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
-import heroLight from "@/public/images/homepage/foliofox-preview-light.png";
-import heroDark from "@/public/images/homepage/foliofox-preview-dark.png";
+import heroLight from "@/public/images/homepage/lauolon-preview-light.png";
+import heroDark from "@/public/images/homepage/lauolon-preview-dark.png";
 
 interface Props {
   alt?: string;
@@ -16,7 +16,7 @@ interface Props {
 }
 
 export function HeroImage({
-  alt = "Foliofox preview",
+  alt = "Lauolon preview",
   className,
   priority,
 }: Props) {

@@ -28,9 +28,10 @@ const DAY_MS = 86_400_000;
 const STALENESS_THRESHOLD_DAYS = 7;
 const REVIEW_COOLDOWN_DAYS = 30;
 
-// Sized against the route's maxDuration of 800s, not against the stale pool.
+// Sized against the route's maxDuration of 300s, not against the stale pool:
+// ~60-90s per web-search research call leaves room for three sequential calls.
 // A backlog beyond the cap drains across subsequent weekly runs.
-const MAX_SYMBOLS_PER_RUN = 10;
+const MAX_SYMBOLS_PER_RUN = 3;
 
 // Failures write no verdict row, so they never enter the cooldown set and
 // re-select first every run. Fetching past the cap gives the loop slack to
@@ -41,8 +42,12 @@ const CANDIDATE_OVERFETCH = 2;
 // Bound the loop from both ends so the run always reaches the digest send
 // instead of being killed mid-loop: per-call for a single hung research call,
 // per-loop for the accumulated worst case.
-const PER_CALL_TIMEOUT_MS = 120_000;
-const LOOP_BUDGET_MS = 600_000;
+//
+// The budget is checked before starting a call, so the worst case is
+// LOOP_BUDGET_MS + PER_CALL_TIMEOUT_MS plus the digest send. These are sized to
+// land under the route's 300s maxDuration: 180s + 90s leaves ~30s of headroom.
+const PER_CALL_TIMEOUT_MS = 90_000;
+const LOOP_BUDGET_MS = 180_000;
 
 type ServiceClient = SupabaseClient<Database>;
 

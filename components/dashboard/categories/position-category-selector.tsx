@@ -62,7 +62,7 @@ export function PositionCategorySelector({
   });
 
   // Prefer the user category label when a custom category is selected; the
-  // underlying Foliofox category remains "other" and should stay invisible.
+  // underlying Lauolon category remains "other" and should stay invisible.
   const selectedCategory = categories.find((category) => {
     if (userCategoryId) {
       return category.user_category_id === userCategoryId;

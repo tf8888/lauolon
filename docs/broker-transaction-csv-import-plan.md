@@ -4,7 +4,7 @@
 
 Implement in phases and stop after each phase for approval. The empty migration exists at `supabase/migrations/20260618021734_add_portfolio_record_external_transaction_ids.sql`.
 
-Keep Foliofox’s model unchanged: positions are holdings, records are transactions, snapshots are derived. Add broker transaction import as an adapter-based layer so future brokers only need a new adapter.
+Keep Lauolon’s model unchanged: positions are holdings, records are transactions, snapshots are derived. Add broker transaction import as an adapter-based layer so future brokers only need a new adapter.
 
 ## Phase 1: Transaction Metadata Foundation
 

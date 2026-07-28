@@ -104,7 +104,7 @@ export function AISettingsForm({ onSuccess }: AISettingsFormProps) {
                   </FieldLabel>
                 </div>
                 <FieldDescription className="text-muted-foreground">
-                  Foliofox AI Advisor can provide more relevant answers if you
+                  Lauolon AI Advisor can provide more relevant answers if you
                   choose to share different levels of data. This feature is
                   powered by third-party AI providers.
                 </FieldDescription>

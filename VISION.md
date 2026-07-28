@@ -1,6 +1,6 @@
-# 🦊 Foliofox - Vision
+# 🦊 Lauolon - Vision
 
-Foliofox started as a tool to replace my spreadsheet and because I needed someone to talk to about my financial decisions.  
+Lauolon started as a tool to replace my spreadsheet and because I needed someone to talk to about my financial decisions.  
 I wanted a reviewer, a second opinion.
 
 I used to ask ChatGPT or Claude things like:
@@ -17,25 +17,25 @@ All of these questions only make sense if the AI has access not just to your cur
 
 So I started wondering: what if the AI already had all that context?
 
-That question is why Foliofox exists.
+That question is why Lauolon exists.
 
 ## The Core Idea
 
-Foliofox is built around a simple insight:  
+Lauolon is built around a simple insight:  
 **financial decisions are longitudinal**, but most tools (and AIs) treat them as isolated events.
 
 Generic chatbots don’t work well for personal finance because they don’t remember you.  
 They don’t know how you got here, what you’ve already tried, or what trade-offs you’ve made in the past.
 
-Foliofox solves this by giving the AI direct, structured access to your portfolio, your history, and your goals. Conversations about money can be contextual, consistent, and actually useful.
+Lauolon solves this by giving the AI direct, structured access to your portfolio, your history, and your goals. Conversations about money can be contextual, consistent, and actually useful.
 
-## What Foliofox Is (and Is Not)
+## What Lauolon Is (and Is Not)
 
-Today, Foliofox is a clean, simple portfolio tracker with a sprinkle of AI.
+Today, Lauolon is a clean, simple portfolio tracker with a sprinkle of AI.
 
 But the tracker is not the end goal: it’s the foundation.
 
-Foliofox is **not**:
+Lauolon is **not**:
 
 - a budgeting app
 - an expense tracker
@@ -46,7 +46,7 @@ It’s built for people who already manage their own finances and want a **think
 
 ## Who It’s For
 
-Foliofox is designed for financially literate users.
+Lauolon is designed for financially literate users.
 
 People from communities like:
 
@@ -61,7 +61,7 @@ They want an unbiased sparring partner to discuss plans, scenarios, and decision
 
 ## The AI Advisor
 
-The long-term vision for Foliofox is a personal AI financial assistant.
+The long-term vision for Lauolon is a personal AI financial assistant.
 
 A smart, unbiased, and naturally cheaper advisor that knows your finances inside out.
 
@@ -83,7 +83,7 @@ It’s up to the user to evaluate, revise, follow, or ignore the advice.
 ## Direction
 
 Right now, the priority is clear:  
-**Foliofox must first be a rock-solid tracker.**
+**Lauolon must first be a rock-solid tracker.**
 
 Clean, intuitive, pleasant to use.  
 It does exactly what it says it does, and nothing more.
@@ -95,18 +95,16 @@ The AI gives the tracker purpose.
 
 ## Monetization (Early Thoughts)
 
-Foliofox was never built with monetization as the primary goal, but some principles are clear:
+Lauolon was never built with monetization as the primary goal, but some principles are clear:
 
 - The tracker should remain free and open source: Portfolio tracking is a commodity, not rocket science, and finance is a sensitive topic where trust matters.
 - Positions and usage shouldn’t be artificially limited, users should feel at home.
 - AI integrations can be paid, since they have real, ongoing costs.
 
-Once users rely on Foliofox to understand and manage their portfolio, switching becomes hard.  
-And once they experience a truly contextual AI advisor, that’s the moment Foliofox can genuinely wow them.
+Once users rely on Lauolon to understand and manage their portfolio, switching becomes hard.  
+And once they experience a truly contextual AI advisor, that’s the moment Lauolon can genuinely wow them.
 
 ---
 
-This document describes the long-term vision of Foliofox.  
+This document describes the long-term vision of Lauolon.  
 Details may evolve as the product and its users grow.
-
-— Leonardo

@@ -102,10 +102,9 @@ function createFakeServiceClient(state: FakeServiceClientState) {
 function setRequiredAutomatedEmailEnvVars() {
   process.env.AUTOMATED_EMAILS_ENABLED = "true";
   process.env.RESEND_API_KEY = "test-resend-key";
-  process.env.EMAILS_FROM_ADDRESS =
-    "Foliofox <notifications@test.foliofox.com>";
+  process.env.EMAILS_FROM_ADDRESS = "Lauolon <notifications@test.lauolon.com>";
   process.env.EMAIL_LINK_SECRET = "test-email-link-secret";
-  process.env.NEXT_PUBLIC_SITE_URL = "https://test.foliofox.com";
+  process.env.NEXT_PUBLIC_SITE_URL = "https://test.lauolon.com";
 }
 
 function clearAutomatedEmailEnvVars() {
@@ -335,8 +334,8 @@ describe("runAutomatedEmailCron", () => {
 
     fetchRecipientEmailsByUserIdMock.mockResolvedValue(
       new Map([
-        ["user-due", "alice@test.foliofox.com"],
-        ["user-already-sent", "bob@test.foliofox.com"],
+        ["user-due", "alice@test.lauolon.com"],
+        ["user-already-sent", "bob@test.lauolon.com"],
       ]),
     );
 
@@ -360,13 +359,13 @@ describe("runAutomatedEmailCron", () => {
     });
 
     buildWeeklyRecapEmailTemplateMock.mockResolvedValue({
-      subject: "Your Foliofox weekly recap",
+      subject: "Your Lauolon weekly recap",
       html: "<html>recap</html>",
       text: "recap",
       links: {
-        dashboardUrl: "https://test.foliofox.com/dashboard",
-        settingsUrl: "https://test.foliofox.com/dashboard?settings=emails",
-        unsubscribeUrl: "https://test.foliofox.com/unsubscribe?token=x",
+        dashboardUrl: "https://test.lauolon.com/dashboard",
+        settingsUrl: "https://test.lauolon.com/dashboard?settings=emails",
+        unsubscribeUrl: "https://test.lauolon.com/unsubscribe?token=x",
       },
     });
 
@@ -452,7 +451,7 @@ describe("runAutomatedEmailCron", () => {
     });
 
     fetchRecipientEmailsByUserIdMock.mockResolvedValue(
-      new Map([["user-empty-portfolio", "empty@test.foliofox.com"]]),
+      new Map([["user-empty-portfolio", "empty@test.lauolon.com"]]),
     );
 
     buildAutomatedEmailDigestMock.mockResolvedValue({

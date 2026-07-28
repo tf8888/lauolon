@@ -1,11 +1,11 @@
 ---
 title: "Privacy Policy"
-description: "How Foliofox collects, uses, stores, and shares personal information."
+description: "How Lauolon collects, uses, stores, and shares personal information."
 effectiveDate: "2026-04-21"
 lastUpdated: "2026-04-21"
 ---
 
-Foliofox is operated by 주식회사 파운더스레어. This Privacy Policy explains what information we collect, how we use it, when we share it, and what choices you have.
+Lauolon is operated by Lauolon. This Privacy Policy explains what information we collect, how we use it, when we share it, and what choices you have.
 
 ## Information We Collect
 
@@ -21,7 +21,7 @@ We collect information you provide directly to us, including:
 
 We use personal information to:
 
-- provide, maintain, and secure Foliofox;
+- provide, maintain, and secure Lauolon;
 - authenticate users and manage accounts;
 - calculate portfolio values, analytics, and reports;
 - operate AI features you choose to use;
@@ -31,7 +31,7 @@ We use personal information to:
 
 ## How We Share Information
 
-We share information only as needed to operate Foliofox, including with service providers such as:
+We share information only as needed to operate Lauolon, including with service providers such as:
 
 - Supabase for authentication, database, and storage;
 - Vercel for hosting and delivery;
@@ -40,17 +40,17 @@ We share information only as needed to operate Foliofox, including with service 
 - Resend for transactional and automated emails; and
 - Discord, when you submit feedback or contact us through our Discord community.
 
-We may also disclose information if required by law or if necessary to protect Foliofox, our users, or others.
+We may also disclose information if required by law or if necessary to protect Lauolon, our users, or others.
 
 We do not sell personal information or share it for cross-context behavioral advertising.
 
 ## Cookies and Analytics
 
-Foliofox uses cookies and similar technologies for authentication, security, language and interface preferences, and analytics. If you block or remove cookies, some parts of the service may not work properly.
+Lauolon uses cookies and similar technologies for authentication, security, language and interface preferences, and analytics. If you block or remove cookies, some parts of the service may not work properly.
 
 ## AI Features
 
-If you enable AI-related consent and use AI features, the prompts, messages, and files you submit may be sent to OpenAI to generate responses. We may also store related conversation history and service metadata to operate, secure, and improve the feature experience inside Foliofox.
+If you enable AI-related consent and use AI features, the prompts, messages, and files you submit may be sent to OpenAI to generate responses. We may also store related conversation history and service metadata to operate, secure, and improve the feature experience inside Lauolon.
 
 ## Public Portfolio Sharing
 
@@ -58,7 +58,7 @@ If you enable public portfolio sharing, information connected to that shared vie
 
 ## Data Retention
 
-We keep personal information for as long as needed to operate Foliofox, provide requested features, comply with legal obligations, resolve disputes, and protect the service.
+We keep personal information for as long as needed to operate Lauolon, provide requested features, comply with legal obligations, resolve disputes, and protect the service.
 
 If you request deletion, we will delete your personal data from our active systems within 48 hours, unless we need to keep limited information for legal, security, fraud-prevention, or backup-recovery purposes.
 
@@ -66,16 +66,16 @@ If you request deletion, we will delete your personal data from our active syste
 
 You may be able to access, update, or delete information in your account settings. You can also opt out of non-essential emails using the unsubscribe link in those emails.
 
-If you want us to delete your data or have a privacy request, contact us through our Discord server:
+If you want us to delete your data or have a privacy request, contact us by email:
 
-[Foliofox Discord Server](/discord)
+[support@lauolon.com](mailto:support@lauolon.com)
 
 Depending on where you live, you may have additional privacy rights under applicable law.
 
 ## International Users
 
-Foliofox and its service providers may process personal information in countries other than your own. By using Foliofox, you understand that your information may be transferred to and processed in those countries.
+Lauolon and its service providers may process personal information in countries other than your own. By using Lauolon, you understand that your information may be transferred to and processed in those countries.
 
 ## Changes to This Policy
 
-We may update this Privacy Policy from time to time. When we do, we will update the `Last Updated` date above. Your continued use of Foliofox after an update means the updated policy will apply going forward.
+We may update this Privacy Policy from time to time. When we do, we will update the `Last Updated` date above. Your continued use of Lauolon after an update means the updated policy will apply going forward.

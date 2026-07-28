@@ -23,8 +23,7 @@ export function AISettingsDialog({
       <DialogContent onOpenAutoFocus={(e) => e.preventDefault()}>
         <DialogHeader>
           <DialogTitle>
-            <Sparkles className="mr-1 inline-block size-5" /> Foliofox AI
-            Advisor
+            <Sparkles className="mr-1 inline-block size-5" /> Lauolon AI Advisor
           </DialogTitle>
           <DialogDescription>
             Update your AI settings and data sharing preferences here.

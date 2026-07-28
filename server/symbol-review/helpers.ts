@@ -132,7 +132,7 @@ export function groupDigestEntries(entries: DigestEntry[]) {
 }
 
 export function buildDigestSubject(entries: DigestEntry[]): string {
-  return `Foliofox symbol review: ${entries.length} stale symbol${
+  return `Lauolon symbol review: ${entries.length} stale symbol${
     entries.length === 1 ? "" : "s"
   } reviewed`;
 }

@@ -28,7 +28,7 @@ export function sanitizeDashboardReturnPath(
   let normalizedPathname: string;
 
   try {
-    const normalizedUrl = new URL(from, "https://foliofox.local");
+    const normalizedUrl = new URL(from, "https://lauolon.local");
     normalizedPathname = normalizedUrl.pathname;
     normalizedPathWithSearch = `${normalizedUrl.pathname}${normalizedUrl.search}`;
   } catch {

@@ -47,7 +47,7 @@ export function ExportAssetsDialog({
 
       downloadCsvFile({
         data: result.data,
-        filename: `foliofox-assets-${todayDateKey}.csv`,
+        filename: `lauolon-assets-${todayDateKey}.csv`,
       });
 
       toast.success("Assets exported successfully!");
@@ -96,7 +96,7 @@ export function ExportAssetsDialog({
               <span className="font-medium">File format:</span> CSV (Comma
               Separated Values)
               <br />
-              <span className="font-medium">Filename:</span> foliofox-assets-
+              <span className="font-medium">Filename:</span> lauolon-assets-
               {todayDateKey}.csv
             </div>
           </div>

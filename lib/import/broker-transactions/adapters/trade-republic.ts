@@ -230,7 +230,7 @@ export const tradeRepublicAdapter: BrokerTransactionAdapter = {
 
     if (importedRowsWithFeesOrTaxes > 0) {
       warnings.push(
-        `Ignored fee/tax amounts on ${importedRowsWithFeesOrTaxes} imported trade row(s); Foliofox records store quantity and unit price only in v1.`,
+        `Ignored fee/tax amounts on ${importedRowsWithFeesOrTaxes} imported trade row(s); Lauolon records store quantity and unit price only in v1.`,
       );
     }
 

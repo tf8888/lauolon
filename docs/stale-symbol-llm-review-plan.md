@@ -8,7 +8,7 @@ The quote pipeline can detect that a symbol stopped producing data (`symbols.las
 
 Decisions already made:
 
-- Table + email digest, no admin UI. Foliofox is open source and self-hosted; every instance has its own operator, and env-var + email fits that better than an admin view.
+- Table + email digest, no admin UI. Lauolon is open source and self-hosted; every instance has its own operator, and env-var + email fits that better than an admin view.
 - No dedicated feature flag or new required env var. The feature enables itself when `AI_PROVIDER_API_KEY`, `RESEND_API_KEY`, and `EMAILS_FROM_ADDRESS` are all set (all pre-existing vars); otherwise the worker exits early with a logged skip reason — no LLM calls, no rows, no noise for self-hosters who haven't configured AI or email.
 - Digest recipient defaults to the mailbox inside `EMAILS_FROM_ADDRESS`; optional `SYMBOL_REVIEW_ALERT_EMAIL` overrides it for operators whose from-address isn't a real inbox.
 - Weekly cadence, 30-day re-review cooldown for still-stale symbols.
@@ -126,8 +126,8 @@ Constants:
 
 - `STALENESS_THRESHOLD_DAYS = 7` (matches `server/positions/stale.ts`).
 - `REVIEW_COOLDOWN_DAYS = 30`.
-- `MAX_SYMBOLS_PER_RUN = 10` — derived from the runtime budget, not from the current stale-pool size: ~60–90s per web-search research call against `maxDuration = 800` puts 10 sequential calls at ~600–900s worst-case. Any backlog beyond the cap drains across subsequent weekly runs (log when the cap is hit so the operator can see a backlog forming).
-- `PER_CALL_TIMEOUT_MS = 120_000`, `LOOP_BUDGET_MS = 600_000` — the cap alone can overrun `maxDuration`, so bound it from both ends: pass `timeout: PER_CALL_TIMEOUT_MS` to `generateText` (supported in `ai@7`) and `break` the loop once elapsed exceeds `LOOP_BUDGET_MS`. Together these guarantee the run reaches the digest send instead of being killed mid-loop, which is what lets the digest be sent once (see below).
+- `MAX_SYMBOLS_PER_RUN = 3` — derived from the runtime budget, not from the current stale-pool size: ~60–90s per web-search research call against `maxDuration = 300` (the Vercel Hobby ceiling) puts three sequential calls at ~180–270s worst-case. Any backlog beyond the cap drains across subsequent weekly runs (log when the cap is hit so the operator can see a backlog forming).
+- `PER_CALL_TIMEOUT_MS = 90_000`, `LOOP_BUDGET_MS = 180_000` — the cap alone can overrun `maxDuration`, so bound it from both ends: pass `timeout: PER_CALL_TIMEOUT_MS` to `generateText` (supported in `ai@7`) and `break` the loop once elapsed exceeds `LOOP_BUDGET_MS`. The budget is checked before starting a call, so the worst case is the sum of both plus the digest send — keep `LOOP_BUDGET_MS + PER_CALL_TIMEOUT_MS` comfortably under `maxDuration`. Together these guarantee the run reaches the digest send instead of being killed mid-loop, which is what lets the digest be sent once (see below).
 
 **Zod schema** (keys required, `.nullable()` per `lib/import/positions/ai-extraction.ts` convention):
 
@@ -192,7 +192,7 @@ Normalize `successor_ticker` to `null` whenever `verdict !== "renamed"` before i
 - Send only if ≥1 pending verdict, via `createAutomatedEmailSender().sendEmail(...)` in try/catch (email failure must not fail the run; the factory itself throws on missing `RESEND_API_KEY`, but the gate already guarantees it).
 - On successful send, update the included rows to `emailed_at = now()`. If that update fails the worst case is duplicate digest entries next week — acceptable.
 - NOT gated by `AUTOMATED_EMAILS_ENABLED` (that flag gates user-facing emails; this is operator mail).
-- Subject `Foliofox symbol review: {n} stale symbol(s) reviewed`; grouped retired → renamed → provider_issue → thinly_traded → unknown; each entry: ticker, name, confidence, summary, evidence links.
+- Subject `Lauolon symbol review: {n} stale symbol(s) reviewed`; grouped retired → renamed → provider_issue → thinly_traded → unknown; each entry: ticker, name, confidence, summary, evidence links.
 - LLM-derived text is escaped by JSX. `emails/_components/email-layout.tsx` gains optional `dashboardUrl`/`reasonText`/`settingsUrl`/`unsubscribeUrl` so operator mail renders without a CTA, a preference centre, or an unsubscribe link it cannot honour; the two user-facing emails pass all of them and render unchanged.
 - Logo URL resolves through `resolveSiteUrl()` _without_ `requireConfiguredPublicUrl`: a self-hosted instance that never set `NEXT_PUBLIC_SITE_URL` must still get its digest, and only the logo image depends on it.
 - `renamed` entries: show the successor ticker and point at `docs/SYMBOL-RENAME-HANDLING.md` for the apply playbook (no SQL — renames are multi-step and user-visible, unlike retirement).
@@ -211,11 +211,11 @@ Scoping by alias id rather than by ticker value is the point of storing `alias_i
 
 ## Step 4 — Cron route
 
-`app/api/cron/review-stale-symbols/route.ts`: copy of `app/api/cron/repair-quote-gaps/route.ts` (CRON_SECRET bearer auth, `await connection()`), delegating to `runSymbolReview` from `@/server/symbol-review/worker`, plus `export const maxDuration = 800;` (already used by fetch-quotes, plan supports it).
+`app/api/cron/review-stale-symbols/route.ts`: copy of `app/api/cron/repair-quote-gaps/route.ts` (CRON_SECRET bearer auth, `await connection()`), delegating to `runSymbolReview` from `@/server/symbol-review/worker`, plus `export const maxDuration = 300;` (already used by fetch-quotes, plan supports it).
 
 ## Step 5 — Config
 
-- `vercel.json` crons: `{ "path": "/api/cron/review-stale-symbols", "schedule": "0 6 * * 1" }` — Monday 06:00 UTC, well after Sunday's 22:00 UTC quote cron so `last_quote_at` reflects the weekend.
+- `.github/workflows/cron.yml`: the `weekly` job on `0 6 * * 1` — Monday 06:00 UTC, well after Sunday's 22:00 UTC quote cron so `last_quote_at` reflects the weekend.
 - `.env.example`: under the automated-emails block, a commented-out `# SYMBOL_REVIEW_ALERT_EMAIL=` with comment "optional override for the weekly symbol-review digest recipient (defaults to the EMAILS_FROM_ADDRESS mailbox); the review runs whenever AI + Resend + from-address are configured, and is not gated by AUTOMATED_EMAILS_ENABLED". No new required vars.
 - `content/product-reference.md`: no update — operator-only, nothing user-facing.
 

@@ -17,7 +17,7 @@ import {
 } from "@/components/ai-elements/conversation";
 import type { PromptInputMessage } from "@/components/ai-elements/prompt-input";
 import { usePromptInputController } from "@/components/ai-elements/prompt-input";
-import { FoliofoxIcon } from "@/components/ui/logos/foliofox-icon";
+import { LauolonIcon } from "@/components/ui/logos/lauolon-icon";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
 import {
   AI_CHAT_CONVERSATION_CAP_FRIENDLY_MESSAGE,
@@ -439,13 +439,8 @@ export function Chat({
             isAIEnabled ? (
               <ConversationEmptyState
                 className="p-4"
-                icon={
-                  <FoliofoxIcon
-                    width={64}
-                    className="text-muted-foreground/25"
-                  />
-                }
-                title="Foliofox AI Advisor"
+                icon={<LauolonIcon width={64} className="opacity-25" />}
+                title="Lauolon AI Advisor"
                 description="Type a message below to start a conversation"
               />
             ) : (

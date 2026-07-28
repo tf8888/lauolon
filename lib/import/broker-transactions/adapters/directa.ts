@@ -235,7 +235,7 @@ export const directaAdapter: BrokerTransactionAdapter = {
 
     if (ignoredFeeRowCount > 0) {
       warnings.push(
-        `Ignored ${ignoredFeeRowCount} Directa commission row(s); Foliofox records store quantity and unit price only in v1.`,
+        `Ignored ${ignoredFeeRowCount} Directa commission row(s); Lauolon records store quantity and unit price only in v1.`,
       );
     }
 

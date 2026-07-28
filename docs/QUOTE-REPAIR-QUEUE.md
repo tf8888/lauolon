@@ -1,6 +1,6 @@
 # Quote Repair Queue
 
-Foliofox keeps range chart reads cache-first. When an opted-in range read misses
+Lauolon keeps range chart reads cache-first. When an opted-in range read misses
 an exact quote date, it enqueues async repair work in `public.quote_repair_queue`
 instead of blocking the chart on Yahoo Finance.
 

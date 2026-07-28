@@ -1,0 +1,98 @@
+name: Scheduled jobs
+
+# Replaces Vercel Cron. The Hobby plan allows only two cron jobs at daily
+# granularity, so the five schedules this app needs cannot live in vercel.json.
+# These jobs call exactly the same HTTP endpoints with the same bearer token,
+# so the handlers in app/api/cron/ are unchanged.
+#
+# Required repository configuration:
+#   Variable  SITE_URL      e.g. https://www.lauolon.com  (no trailing slash)
+#   Secret    CRON_SECRET   must match CRON_SECRET in the Vercel environment
+#
+# See docs/CRONS.md for the schedule table and per-job notes.
+
+on:
+  schedule:
+    # All times UTC. GitHub's scheduler is best-effort and can lag by 10+
+    # minutes under load; none of these jobs is sensitive to that.
+    - cron: "0 22 * * *" # fetch-exchange-rates + fetch-quotes
+    - cron: "17 * * * *" # repair-quote-gaps + send-automated-emails
+    - cron: "0 6 * * 1" # review-stale-symbols
+  workflow_dispatch:
+    inputs:
+      endpoint:
+        description: Endpoint to run now
+        required: true
+        type: choice
+        options:
+          - fetch-exchange-rates
+          - fetch-quotes
+          - repair-quote-gaps
+          - send-automated-emails
+          - review-stale-symbols
+
+permissions:
+  contents: read
+
+jobs:
+  daily:
+    name: Daily market data
+    if: github.event.schedule == '0 22 * * *'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+      - name: Refresh exchange rates and quotes
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          ENDPOINTS: fetch-exchange-rates fetch-quotes
+        run: bash scripts/run-cron.sh
+
+  hourly:
+    name: Hourly queues
+    if: github.event.schedule == '17 * * * *'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+      - name: Drain quote repair queue and send due emails
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          ENDPOINTS: repair-quote-gaps send-automated-emails
+        run: bash scripts/run-cron.sh
+
+  weekly:
+    name: Weekly stale symbol review
+    if: github.event.schedule == '0 6 * * 1'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+      - name: Review stale symbols
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          ENDPOINTS: review-stale-symbols
+        run: bash scripts/run-cron.sh
+
+  manual:
+    name: Manual run
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+      # inputs.endpoint is passed through the environment rather than
+      # interpolated into the script, so it can never be shell-injected.
+      - name: Run the selected endpoint
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          ENDPOINTS: ${{ inputs.endpoint }}
+        run: bash scripts/run-cron.sh

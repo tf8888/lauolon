@@ -26,7 +26,7 @@ interface FetchUserPositionCategoriesWithUsageOptions {
 /**
  * Fetch position categories for UI and import flows.
  *
- * By default this returns only Foliofox system categories. Custom categories are
+ * By default this returns only Lauolon system categories. Custom categories are
  * opt-in because import and AI flows still need the canonical system taxonomy.
  */
 export async function fetchPositionCategories({
@@ -84,7 +84,7 @@ export async function fetchPositionCategories({
       id: category.id,
       name: category.name,
       source: "custom" as const,
-      // Custom categories intentionally opt out of the Foliofox taxonomy.
+      // Custom categories intentionally opt out of the Lauolon taxonomy.
       // "other" satisfies the required system category while user_category_id
       // drives the visible label and user-facing grouping.
       category_id: "other",

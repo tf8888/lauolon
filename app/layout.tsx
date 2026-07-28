@@ -26,8 +26,8 @@ const metadataBase = new URL(
 export const metadata: Metadata = {
   metadataBase,
   title: {
-    default: "Foliofox - The AI-Powered Portfolio Intelligence Platform",
-    template: "%s - Foliofox",
+    default: "Lauolon - The AI-Powered Portfolio Intelligence Platform",
+    template: "%s - Lauolon",
   },
   description:
     "Comprehensive portfolio tracking and AI-powered financial planning. Monitor your holdings, analyze performance, and discover growth opportunities with predictive insights tailored to your wealth-building strategy.",

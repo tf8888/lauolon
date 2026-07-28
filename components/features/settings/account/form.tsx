@@ -318,12 +318,7 @@ export function AccountSettingsForm({ onSuccess }: AccountSettingsFormProps) {
               disabled
             />
             <FieldDescription>
-              <a
-                href="/discord"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground"
-              >
+              <a href="mailto:support@lauolon.com" className="text-foreground">
                 Contact support
               </a>{" "}
               to change your email address.
@@ -335,7 +330,7 @@ export function AccountSettingsForm({ onSuccess }: AccountSettingsFormProps) {
             <h3 className="text-sm font-medium">Delete account</h3>
             <p className="text-muted-foreground mt-1 text-sm">
               Permanently remove your Personal Account and all of its contents
-              from Foliofox. This action is not reversible, so please continue
+              from Lauolon. This action is not reversible, so please continue
               with caution.
             </p>
             <DeleteAccountDialog email={email} disabled={isLoading} />

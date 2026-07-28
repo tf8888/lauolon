@@ -98,7 +98,7 @@ export default function ReengagementEmail({
         </EmailSectionHeading>
         <EmailMutedText>
           Make sure you have your finances under control. A quick visit to the
-          dashboard or a short chat with Foliofox AI advisor will help you get
+          dashboard or a short chat with Lauolon AI advisor will help you get
           back on track.
         </EmailMutedText>
       </Section>

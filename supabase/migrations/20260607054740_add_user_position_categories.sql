@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS public.user_position_categories (
 );
 
 COMMENT ON TABLE public.user_position_categories IS
-  'User-owned position categories shown in place of Foliofox system categories.';
+  'User-owned position categories shown in place of Lauolon system categories.';
 
 COMMENT ON COLUMN public.user_position_categories.position_type IS
   'Scopes custom categories to assets or liabilities.';

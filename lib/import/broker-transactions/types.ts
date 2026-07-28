@@ -14,7 +14,7 @@ export interface BrokerTransactionCSVRow {
 
 export interface BrokerTransactionPositionDraft {
   // Stable adapter-local key used to connect parsed records to parsed positions
-  // before the server creates or matches real Foliofox position IDs.
+  // before the server creates or matches real Lauolon position IDs.
   positionKey: string;
   name: string;
   category_id: CategoryId;

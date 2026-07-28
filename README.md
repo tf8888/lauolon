@@ -1,6 +1,6 @@
-# Foliofox
+# Lauolon
 
-A net worth tracking app with an AI-powered financial advisor that helps you make smarter decisions about your portfolio. **Foliofox is not a budgeting or an expense tracking app.**
+A net worth tracking app with an AI-powered financial advisor that helps you make smarter decisions about your portfolio. **Lauolon is not a budgeting or an expense tracking app.**
 
 ![hero](/public/images/github/readme-hero.png)
 
@@ -22,7 +22,7 @@ A net worth tracking app with an AI-powered financial advisor that helps you mak
 
 ## Vision
 
-If you’re curious about why Foliofox exists and where it’s going, read the full vision here: [VISION.md](./VISION.md)
+If you’re curious about why Lauolon exists and where it’s going, read the full vision here: [VISION.md](./VISION.md)
 
 ## Quick Start (Docker)
 
@@ -31,8 +31,8 @@ If you’re curious about why Foliofox exists and where it’s going, read the f
 1. Clone and configure:
 
    ```bash
-   git clone https://github.com/unav4ila8le/foliofox.git
-   cd foliofox
+   git clone https://github.com/tf8888/lauolon.git
+   cd lauolon
    ```
 
 2. Copy the example environment file and fill in your own values:
@@ -71,12 +71,10 @@ For local Node.js setup without Docker, see the [contributing guide](/CONTRIBUTI
 
 Please read the [contributing guide](/CONTRIBUTING.md).
 
-Join our [Discord server](https://www.foliofox.com/discord).
-
 ## Roadmap
 
-> Foliofox started as personal project with me as a single maintainer, so the roadmap lived here in the README. Now that it’s public, the roadmap has been migrated to GitHub Issues for better tracking and collaboration.
+> The roadmap is tracked in [GitHub Issues](https://github.com/tf8888/lauolon/issues).
 
 ## License
 
-MIT © 2025 주식회사 파운더스레어. See [LICENSE](https://github.com/unav4ila8le/foliofox/blob/main/LICENSE) for details.
+MIT © 2026 tf8888. See [LICENSE](https://github.com/tf8888/lauolon/blob/main/LICENSE) for details.

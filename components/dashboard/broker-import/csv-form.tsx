@@ -133,7 +133,7 @@ export function BrokerImportCSVForm() {
             )}
           </span>{" "}
           are currently supported. Upload a transaction CSV, review the matched
-          symbols, and Foliofox will create positions, import transactions, and
+          symbols, and Lauolon will create positions, import transactions, and
           skip records already imported.
         </div>
 

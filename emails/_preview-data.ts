@@ -19,7 +19,7 @@ const previewLinks: AutomatedEmailTemplateLinks = {
   dashboardUrl: "http://localhost:3000/dashboard",
   settingsUrl: "http://localhost:3000/dashboard?settings=emails",
   unsubscribeUrl: "http://localhost:3000/unsubscribe?token=preview-token",
-  logoUrl: "http://localhost:3000/images/foliofox-logo.png",
+  logoUrl: "http://localhost:3000/images/lauolon-logo.png",
 };
 
 const previewDigest: AutomatedEmailDigest = {
@@ -108,7 +108,7 @@ const previewDigest: AutomatedEmailDigest = {
 };
 
 export const weeklyRecapPreviewProps: AutomatedEmailTemplateProps = {
-  username: "Leonardo",
+  username: "Testuser",
   digest: previewDigest,
   links: previewLinks,
   reasonText:
@@ -118,7 +118,7 @@ export const weeklyRecapPreviewProps: AutomatedEmailTemplateProps = {
 };
 
 export const reengagementPreviewProps: AutomatedEmailTemplateProps = {
-  username: "Leonardo",
+  username: "Testuser",
   digest: previewDigest,
   links: previewLinks,
   reasonText:

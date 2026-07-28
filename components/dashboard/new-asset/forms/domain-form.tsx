@@ -221,7 +221,7 @@ export function DomainForm() {
                   <InputGroupInput
                     id={field.name}
                     disabled={isCheckingValuation}
-                    placeholder="E.g., foliofox.com"
+                    placeholder="E.g., lauolon.com"
                     aria-invalid={fieldState.invalid}
                     {...field}
                     onChange={(e) => {

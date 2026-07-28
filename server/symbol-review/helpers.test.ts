@@ -27,12 +27,12 @@ function createEntry(overrides: Partial<DigestEntry> = {}): DigestEntry {
 describe("resolveDigestRecipient", () => {
   it("prefers the explicit override", () => {
     expect(
-      resolveDigestRecipient("ops@foliofox.dev", "Foliofox <no@x.dev>"),
-    ).toBe("ops@foliofox.dev");
+      resolveDigestRecipient("ops@lauolon.dev", "Lauolon <no@x.dev>"),
+    ).toBe("ops@lauolon.dev");
   });
 
   it("extracts the mailbox from a display-name from address", () => {
-    expect(resolveDigestRecipient(undefined, "Foliofox <notify@x.dev>")).toBe(
+    expect(resolveDigestRecipient(undefined, "Lauolon <notify@x.dev>")).toBe(
       "notify@x.dev",
     );
   });

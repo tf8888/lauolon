@@ -93,7 +93,7 @@ export function EmailSettingsForm({ onSuccess }: EmailSettingsFormProps) {
           <div className="space-y-1">
             <h3 className="text-sm font-semibold">Automated emails</h3>
             <p className="text-muted-foreground text-sm">
-              Control which automated emails Foliofox can send you.
+              Control which automated emails Lauolon can send you.
             </p>
           </div>
 

@@ -32,7 +32,7 @@ export default function WeeklyRecapEmail({
 
   return (
     <EmailLayout
-      previewText="Your Foliofox weekly recap is ready"
+      previewText="Your Lauolon weekly recap is ready"
       title="Your weekly portfolio recap"
       subtitle={
         username

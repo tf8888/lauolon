@@ -373,7 +373,7 @@ export function PortfolioRecordsTable({
     const csvRows = selectedRows.map(mapPortfolioRecordToCsvRow);
     downloadCsvFile({
       data: portfolioRecordsToCSV(csvRows),
-      filename: `foliofox-records-selected-${formatLocalDateKey(new Date())}.csv`,
+      filename: `lauolon-records-selected-${formatLocalDateKey(new Date())}.csv`,
     });
   }, [selectedRows]);
 

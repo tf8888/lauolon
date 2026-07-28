@@ -22,7 +22,7 @@
 - Backfill one `email_preferences` row for every existing profile with both preferences enabled, because you chose default-on for everyone.
 - Update `handle_new_user()` so new signups automatically get an `email_preferences` row with both preferences enabled.
 - Add RLS so users can read and update only their own `email_preferences` row. Keep `automated_email_deliveries` service-only.
-- Stop here. You apply the migration and regenerate [database.types.ts](/Users/leonardo/Code/foliofox/types/database.types.ts). No migration is ever applied by me.
+- Stop here. You apply the migration and regenerate [database.types.ts](types/database.types.ts). No migration is ever applied by me.
 
 ### Phase 2 — Server Foundations And Shared Digest Logic
 

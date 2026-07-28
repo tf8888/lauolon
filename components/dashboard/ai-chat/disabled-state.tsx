@@ -6,7 +6,7 @@ import { useState } from "react";
 import { ConversationEmptyState } from "@/components/ai-elements/conversation";
 import { AISettingsDialog } from "@/components/dashboard/ai-chat/settings/dialog";
 import { Button } from "@/components/ui/button";
-import { FoliofoxIcon } from "@/components/ui/logos/foliofox-icon";
+import { LauolonIcon } from "@/components/ui/logos/lauolon-icon";
 
 export function DisabledState() {
   const [openAISettings, setOpenAISettings] = useState(false);
@@ -14,8 +14,8 @@ export function DisabledState() {
   return (
     <div className="p-4 text-center">
       <ConversationEmptyState
-        icon={<FoliofoxIcon width={64} className="text-muted-foreground/25" />}
-        title="Foliofox AI Advisor"
+        icon={<LauolonIcon width={64} className="opacity-25" />}
+        title="Lauolon AI Advisor"
         description="Share your portfolio and financial profile to get tailored insights and advice."
         className="p-0 pb-3"
       />

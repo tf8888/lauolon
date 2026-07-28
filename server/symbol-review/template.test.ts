@@ -21,7 +21,7 @@ function createEntry(overrides: Partial<DigestEntry> = {}): DigestEntry {
 }
 
 beforeEach(() => {
-  vi.stubEnv("NEXT_PUBLIC_SITE_URL", "https://test.foliofox.com");
+  vi.stubEnv("NEXT_PUBLIC_SITE_URL", "https://test.lauolon.com");
 });
 
 afterEach(() => {

@@ -100,7 +100,7 @@ describe("GET /api/cron/fetch-quotes", () => {
     expect(body.stats.failedFetches).toBe(0);
     expect(body.stats.retryCount).toBe(0);
     expect(body.stats.failedBatchCount).toBe(0);
-    expect(maxDuration).toBe(800);
+    expect(maxDuration).toBe(300);
     expect(body.stats.perDate).toHaveLength(3);
     expect(
       body.stats.perDate.map((entry: { date: string }) => entry.date),

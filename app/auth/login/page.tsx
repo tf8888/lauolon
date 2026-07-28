@@ -8,7 +8,7 @@ import { createClient } from "@/supabase/server";
 
 export const metadata: Metadata = {
   title: "Login",
-  description: "Sign in to your Foliofox account.",
+  description: "Sign in to your Lauolon account.",
 };
 
 export default async function LoginPage() {
